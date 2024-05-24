@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Astro Starter Kit: Basics
 
 ```sh
@@ -52,3 +53,7 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+=======
+# astro-clone-spotify
+Creating a Clone of Spotify Basic with Astro. Using Framework as Tailwindcss, React Js.  
+>>>>>>> ada3aff954c4f813c9d4baefaf770151cdd5e5fb
