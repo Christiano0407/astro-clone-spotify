@@ -1,9 +1,14 @@
 ---
+// Supports weights 100-900
+import '@fontsource-variable/inter';
+
+
 interface Props {
 	title: string;
 }
 
 const { title } = Astro.props;
+
 ---
 
 <!doctype html>
@@ -16,8 +21,13 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
-		<slot />
+	<body class="bg-zinc-900" >
+		<div id="app" class="relative h-screen p-2 flex items-stretch">
+			<aside class="[grid-area:aside] flex-col flex overflow-y-auto bg-zinc-700"></aside>
+			<main class="[grid-area:main] rounded-lg overflow-y-auto bg-zinc-700 "></main>
+			<footer class="[grid-area:player] bg-green-500 ">Player</footer>
+			<slot />
+		</div>
 	</body>
 </html>
 <style is:global>
@@ -28,16 +38,17 @@ const { title } = Astro.props;
 	}
 	body {
 		width: 100%;
+		font-family: 'Inter Variable', sans-serif;
 	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
+
+	#app {
+		display: grid;
+		grid-template-areas: 
+		"aside main main"
+		"player player player";
+		grid-template-columns: 35rem 1fr;
+		grid-template-rows: 1fr auto;
+		gap: 1rem;
 	}
+
 </style>
