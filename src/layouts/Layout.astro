@@ -1,7 +1,9 @@
 ---
+
 // Supports weights 100-900
 import '@fontsource-variable/inter';
-
+import AsideMenu from '../components/AsideMenu.astro';
+import ViewTransitions from 'astro/components/ViewTransitions.astro';
 
 interface Props {
 	title: string;
@@ -20,13 +22,17 @@ const { title } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<ViewTransitions />
 	</head>
 	<body class="bg-zinc-900" >
 		<div id="app" class="relative h-screen p-2 flex items-stretch">
-			<aside class="[grid-area:aside] flex-col flex overflow-y-auto bg-zinc-700"></aside>
-			<main class="[grid-area:main] rounded-lg overflow-y-auto bg-zinc-700 "></main>
+			<aside class="[grid-area:aside] flex-col flex overflow-y-auto bg-zinc-900">
+        <AsideMenu />
+			</aside>
+			<main class="[grid-area:main] rounded-lg overflow-y-auto bg-zinc-900 ">
+				<slot />
+			</main>
 			<footer class="[grid-area:player] bg-green-500 ">Player</footer>
-			<slot />
 		</div>
 	</body>
 </html>
