@@ -1,0 +1,14 @@
+---
+
+import type { Playlist } from "../lib/dataPlayList";
+
+
+interface Props {
+  playList: Playlist
+}
+ 
+const { playList } = Astro.props; 
+const { id, cover, title, artists, color, } = playList; 
+const artistString = artists.join(","); 
+
+---

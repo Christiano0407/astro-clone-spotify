@@ -10,6 +10,7 @@ export interface Playlist {
   artists: string[]; 
 }
 
+
 export const playlist: Playlist[] = [
   {
     id: '1',
@@ -66,3 +67,20 @@ export const playlist: Playlist[] = [
     artists: ["WFS", "Nadav Cohen"],
   },
 ] 
+
+
+export const morePlaylist = playlist.map(item => ({
+  ...item, 
+  id: item.id + "_more",
+})); 
+
+export const sidePlayList = playlist.map(item => ({
+  ...item, 
+  id: item.id + "_side",
+})); 
+
+export const allPlaylist = [
+  ...playlist,
+  ...morePlaylist, 
+  ...sidePlayList
+]; 
