@@ -1,6 +1,10 @@
 {
   "cSpell.words": [
     "astro",
-    "astrojs"
+    "astrojs",
+    "fontsource",
+    "tailwindcss",
+    "tseslint",
+    "zustand"
   ]
 }
